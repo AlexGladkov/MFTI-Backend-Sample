@@ -8,8 +8,11 @@ import io.ktor.server.plugins.contentnegotiation.*
 import tech.mfti.plugins.*
 
 fun main() {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0", module = Application::module)
-        .start(wait = true)
+    embeddedServer(
+        Netty,
+        port = System.getenv("SERVER_PORT").toInt(),
+        module = Application::module
+    ).start(wait = true)
 }
 
 fun Application.module() {
