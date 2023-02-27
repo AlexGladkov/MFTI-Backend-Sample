@@ -39,3 +39,9 @@ dependencies {
 tasks.create("stage") {
     dependsOn("installDist")
 }
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "tech.mfti.ApplicationKt"
+    }
+}
