@@ -8,6 +8,7 @@ import io.ktor.server.plugins.contentnegotiation.*
 import tech.mfti.plugins.*
 
 fun main() {
+    println("PORT ${System.getenv("SERVER_PORT")}")
     embeddedServer(
         Netty,
         port = System.getenv("SERVER_PORT").toInt(),
